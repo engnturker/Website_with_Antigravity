@@ -2,83 +2,48 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Card from '../components/Card.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-
-// Placeholder data for features
-const features = [
-  {
-    title: 'Blazing Fast',
-    body: 'Built on Astro\'s islands architecture for zero-javascript by default.',
-    href: '#speed',
-    icon: '⚡'
-  },
-  {
-    title: 'Premium Design',
-    body: 'Crafted with attention to detail, modern aesthetics, and smooth animations.',
-    href: '#design',
-    icon: '🎨'
-  },
-  {
-    title: 'Fully Responsive',
-    body: 'Looks amazing on any device, from mobile phones to 4K desktops.',
-    href: '#responsive',
-    icon: '📱'
-  },
-    {
-    title: 'SEO Optimized',
-    body: 'Rank higher with baked-in best practices and semantic HTML structure.',
-    href: '#seo',
-    icon: '🔍'
-  }
-];
 ---
 
-<Layout title="Antigravity | Premium Astro Starter">
+<Layout title="Engin TÜRKER | Portfolio">
 	<Header />
 	
 	<main>
 		<Hero />
-		
-        <!-- Features Section -->
-		<section id="features" class="py-24 relative">
-            <div class="absolute inset-0 bg-dark/50 backdrop-blur-3xl z-[-1]"></div>
-			<div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">
-                        Experience the perfect blend of performance and beauty.
-                    </p>
-                </div>
-                
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-					{features.map((feature) => (
-						<Card 
-                            title={feature.title} 
-                            body={feature.body} 
-                            href={feature.href} 
-                            icon={feature.icon}
-                        />
-					))}
-				</div>
-			</div>
-		</section>
-
-        <!-- CTA Section -->
-        <section class="py-24 relative overflow-hidden">
-            <div class="container mx-auto px-6 text-center">
-                <div class="relative z-10 bg-gradient-to-r from-primary/10 via-purple-500/10 to-secondary/10 border border-white/10 rounded-3xl p-12 backdrop-blur-md">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to launch?</h2>
-                    <p class="text-gray-300 mb-8 max-w-xl mx-auto">
-                        Join thousands of developers building the future of the web with Antigravity.
-                    </p>
-                    <a href="#" class="inline-block px-8 py-4 rounded-full bg-white text-dark font-bold hover:bg-gray-100 transition-colors">
-                        Get Started Now
-                    </a>
-                </div>
-            </div>
-        </section>
+        <About />
+        <Experience />
+        <Skills />
+        <Contact />
 	</main>
     
     <Footer />
 </Layout>
+
+<style is:global>
+    :root {
+        --primary: #6366f1;
+        --secondary: #ec4899;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Selection Color */
+    ::selection {
+        background: rgba(99, 102, 241, 0.3);
+        color: white;
+    }
+
+    /* Animation utility */
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+</style>

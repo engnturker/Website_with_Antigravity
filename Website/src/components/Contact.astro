@@ -1,0 +1,76 @@
+---
+---
+
+<section id="contact" class="py-24 relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md relative overflow-hidden">
+      <!-- Background Glow -->
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+      
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white">İletişime Geçin</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            Yeni projeler, iş teklifleri veya teknik danışmanlık için bana aşağıdaki kanallardan ulaşabilirsiniz.
+          </p>
+          
+          <div class="space-y-6">
+            <a href="mailto:engnturker@gmail.com" class="flex items-center group">
+              <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mr-4 group-hover:bg-primary transition-colors">
+                <i data-lucide="mail" class="w-6 h-6 text-primary group-hover:text-white"></i>
+              </div>
+              <div>
+                <span class="block text-gray-500 text-sm">E-mail</span>
+                <span class="text-white font-medium">engnturker@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:+905434692516" class="flex items-center group">
+              <div class="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mr-4 group-hover:bg-secondary transition-colors">
+                <i data-lucide="phone" class="w-6 h-6 text-secondary group-hover:text-white"></i>
+              </div>
+              <div>
+                <span class="block text-gray-500 text-sm">Telefon</span>
+                <span class="text-white font-medium">+90 543 469 25 16</span>
+              </div>
+            </a>
+
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mr-4">
+                <i data-lucide="map-pin" class="w-6 h-6 text-purple-500"></i>
+              </div>
+              <div>
+                <span class="block text-gray-500 text-sm">Konum</span>
+                <span class="text-white font-medium">Çerkezköy, Tekirdağ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Adınız</label>
+            <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary outline-none transition-colors" placeholder="Engin Turker"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">E-posta</label>
+            <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary outline-none transition-colors" placeholder="ornek@mail.com"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Mesajınız</label>
+            <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary outline-none transition-colors" placeholder="Mesajınızı buraya yazın..."></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:opacity-90 transition-opacity">
+            Mesaj Gönder
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+</script>

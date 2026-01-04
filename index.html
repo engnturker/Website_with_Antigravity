@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engin TÜRKER | Bilgi İşlem Sorumlusu & Sistem Network Uzmanı</title>
+    <meta name="description" content="Engin TÜRKER - Bilgi İşlem Sorumlusu & Sistem Network Uzmanı Portfolio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9', // Sky Blue
+                        secondary: '#10b981', // Emerald Green
+                        dark: '#0f172a',
+                        'glass-surface': 'rgba(255, 255, 255, 0.05)',
+                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.3);
+            color: white;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white dark:bg-dark text-slate-800 dark:text-white font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden transition-colors duration-300">
+    <script>
+        // Check for theme on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <!-- Animatedbg -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-white dark:via-[#0a0a0a] to-white dark:to-black">
+        </div>
+        <div
+            class="absolute top-[-10%] left-[20%] w-[30rem] h-[30rem] bg-primary/10 dark:bg-primary/20 rounded-full blur-[100px] opacity-40 animate-blob">
+        </div>
+        <div
+            class="absolute top-[10%] right-[20%] w-[25rem] h-[25rem] bg-secondary/10 dark:bg-secondary/20 rounded-full blur-[100px] opacity-40 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute bottom-[-10%] left-[40%] w-[35rem] h-[35rem] bg-teal-500/5 dark:bg-teal-500/10 rounded-full blur-[120px] opacity-30 animate-blob animation-delay-4000">
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-glass-surface border-b border-glass-border">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#"
+                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Engin
+                TÜRKER</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about"
+                    class="text-sm font-medium text-slate-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-all duration-300 relative group">
+                    Hakkımda
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#experience"
+                    class="text-sm font-medium text-slate-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-all duration-300 relative group">
+                    Deneyim
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#skills"
+                    class="text-sm font-medium text-slate-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-all duration-300 relative group">
+                    Yetenekler
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-gray-400 hover:text-primary transition-all">
+                    <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
+                    <i data-lucide="moon" class="block dark:hidden w-5 h-5"></i>
+                </button>
+
+                <a href="#contact"
+                    class="px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 transition-all shadow-lg shadow-primary/20">
+                    İletişim
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-28 overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <div class="flex-1 text-center lg:text-left animate-fade-in space-y-8">
+                        <div
+                            class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-4 animate-slide-up">
+                            <span class="text-sm text-primary font-medium tracking-wide">💻 Sistem & Network
+                                Uzmanı</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold tracking-tight animate-slide-up text-slate-900 dark:text-white"
+                            style="animation-delay: 100ms;">
+                            Merhaba, Ben <br />
+                            <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-secondary transition-all duration-300">Engin
+                                TÜRKER</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-700 dark:text-gray-400 max-w-2xl lg:mx-0 mx-auto animate-slide-up"
+                            style="animation-delay: 200ms;">
+                            Albayrak Demir Çelik bünyesinde Bilgi İşlem Sorumlusu olarak görev yapmaktayım. 15 yılı
+                            aşkın süredir uluslararası projelerde sistem, network ve altyapı yönetimi konularında
+                            uzmanlaşmaktayım.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 animate-slide-up"
+                            style="animation-delay: 300ms;">
+                            <a href="#contact"
+                                class="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/25">İletişime
+                                Geç</a>
+                            <a href="#experience"
+                                class="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold transition-colors backdrop-blur-sm">Deneyimlerimi
+                                Gör</a>
+                        </div>
+                    </div>
+                    <div class="flex-1 relative animate-fade-in" style="animation-delay: 200ms;">
+                        <div
+                            class="relative w-72 h-72 md:w-[420px] md:h-[420px] mx-auto transition-transform duration-500">
+                            <!-- Animated Background Ring -->
+                            <div
+                                class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-purple-500 to-secondary animate-spin-slow opacity-60 blur-3xl">
+                            </div>
+                            <!-- Image Container -->
+                            <div
+                                class="relative w-full h-full rounded-full border-2 border-white/10 overflow-hidden backdrop-blur-md bg-white/5 group">
+                                <img src="profile.png" alt="Engin TÜRKER"
+                                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-dark to-transparent"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <div class="flex-1 space-y-8">
+                        <div>
+                            <h2
+                                class="text-3xl font-bold mb-6 text-slate-900 dark:text-white border-l-4 border-primary pl-4">
+                                Hakkımda</h2>
+                            <p class="text-slate-800 dark:text-gray-400 leading-relaxed text-lg font-medium">
+                                21/03/1985 Amasya doğumluyum. Kariyer hayatıma teknik servis elemanı olarak başlayıp, 15
+                                yılı aşkın süredir bilgi işlem, sistem yönetimi ve network dizaynı konularında
+                                uzmanlaşarak devam etmekteyim. Tekfen İnşaat bünyesinde Azerbaycan, BAE ve Türkiye'deki
+                                devasa projelerde BT altyapılarını kurma ve yönetme şansı buldum.
+                            </p>
+                            <p class="text-slate-800 dark:text-gray-400 leading-relaxed text-lg mt-4 font-medium">
+                                Şu anda Albayrak Demir Çelik bünyesinde 180'den fazla bilgisayar ve çoklu sunucu
+                                yapılarını yöneterek BT süreçlerinin kesintisiz devam etmesini sağlamaktayım.
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white flex items-center">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 text-primary"></i> Eğitim
+                            </h3>
+                            <div class="space-y-6">
+                                <div
+                                    class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                                    <h4 class="font-bold text-slate-800 dark:text-white">Anadolu Üniversitesi</h4>
+                                    <p class="text-slate-600 dark:text-gray-400 text-sm">İşletme Fakültesi</p>
+                                    <p class="text-primary text-xs mt-1">2008-2013</p>
+                                </div>
+                                <div
+                                    class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                                    <h4 class="font-bold text-slate-800 dark:text-white">Selçuk Üniversitesi</h4>
+                                    <p class="text-slate-600 dark:text-gray-400 text-sm">Doğalgaz, Isıtma ve Sıhhi
+                                        Tesisat Teknolojileri</p>
+                                    <p class="text-primary text-xs mt-1">2005-2007</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div
+                            class="bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10 p-8 rounded-3xl border border-slate-200 dark:border-white/10 backdrop-blur-sm shadow-xl">
+                            <h3 class="text-xl font-bold mb-8 text-slate-800 dark:text-white flex items-center">
+                                <i data-lucide="award" class="w-6 h-6 mr-3 text-secondary"></i> Sertifikalar & Eğitimler
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">VMware vSphere (Bilge Adam
+                                        Academy)</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">Cisco CCNA (ODTÜ
+                                        SEM)</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">ECDL (Çizgi TAGEM)</span>
+                                </li>
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">CompTIA Network+ (Çizgi
+                                        TAGEM)</span>
+                                </li>
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">A+ Bilgisayar Teknik
+                                        Servis (Çizgi
+                                        TAGEM)</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle"
+                                        class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i><span
+                                        class="text-slate-800 dark:text-gray-300 font-medium">Bilgisayar İşletmenliği
+                                        (MEB)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 grid grid-cols-2 gap-4">
+                            <div
+                                class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center shadow-lg">
+                                <span class="block text-3xl font-bold text-slate-900 dark:text-white mb-1">15+</span>
+                                <span class="text-slate-500 dark:text-gray-500 text-xs uppercase tracking-widest">Yıl
+                                    Deneyim</span>
+                            </div>
+                            <div
+                                class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center shadow-lg">
+                                <span class="block text-3xl font-bold text-slate-900 dark:text-white mb-1">10+</span>
+                                <span class="text-slate-500 dark:text-gray-500 text-xs uppercase tracking-widest">Dev
+                                    Proje</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 relative overflow-hidden bg-dark/30">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900 dark:from-white dark:via-gray-400 dark:to-white">
+                        İş Deneyimi</h2>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent">
+                    </div>
+                    <div class="space-y-12">
+                        <!-- Albayrak -->
+                        <div class="relative flex flex-col md:flex-row items-center md:flex-row-reverse">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2022-Halen</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Sorumlusu</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Erna Holding
+                                        - Albayrak Demir Çelik</h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Samsun / Türkiye</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">14
+                                        server ve
+                                        180 bilgisayara donanım ve yazılım desteği, Microsoft Server yönetimi (AD, DNS,
+                                        DHCP, IIS), Fortinet Firewall, Ruijie donanım yapılandırmaları ve Turkcell bulut
+                                        yönetimi.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Tekfen Baku Office -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2019-2022</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Uzmanı</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Tekfen İnşaat
+                                        - Azerbaycan Ülke
+                                        Ofisi</h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Bakü / Azerbaycan</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">7
+                                        server ve 80
+                                        bilgisayara BT
+                                        desteği, Microsoft Server 2018 yönetimi, Fortinet Firewall, Avaya IP Office ve
+                                        CCTV sistemleri yönetimi.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Tekfen Turkstream -->
+                        <div class="relative flex flex-col md:flex-row items-center md:flex-row-reverse">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2017-2019</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Şefi</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Tekfen İnşaat
+                                        - Türkakım Projesi
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Kırklareli / Türkiye
+                                    </p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">
+                                        Türkakım Alım
+                                        Terminali yapım
+                                        işleri kapsamında 5 server ve 160 bilgisayara BT desteği ve sistem yönetimi.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Tekfen TANAP -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2015-2017</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Sorumlusu</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Tekfen İnşaat
+                                        - TANAP Projesi
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Yozgat / Türkiye</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">8
+                                        server ve 150
+                                        bilgisayara destek,
+                                        Palo Alto Firewall yönetimi ve kamp BT altyapı kurulumu.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Tekfen Stadium -->
+                        <div class="relative flex flex-col md:flex-row items-center md:flex-row-reverse">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2013-2015</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Elemanı</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Tekfen İnşaat
+                                        - Bakü Olimpiyat
+                                        Stadyumu</h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Bakü / Azerbaycan</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">15
+                                        server ve
+                                        200 bilgisayara geniş
+                                        kapsamlı BT desteği, Cisco Switch ve Palo Alto Firewall yapılandırmaları.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Tekfen UAE -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2010-2013</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Bilgi İşlem Sorumlusu</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Tekfen İnşaat
+                                        - SAS/ASAB Projesi
+                                    </h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Abu Dabi / BAE</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">
+                                        Uluslararası
+                                        petrol ve gaz
+                                        projesinde 5 server ve 150 bilgisayara destek, VoIP, Uydu Bağlantıları ve Debian
+                                        Proxy yönetimi.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Sistem Bilgisayar -->
+                        <div class="relative flex flex-col md:flex-row items-center md:flex-row-reverse">
+                            <div
+                                class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10">
+                            </div>
+                            <div class="w-full md:w-1/2 pl-12 md:px-8">
+                                <div
+                                    class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group shadow-md dark:shadow-none">
+                                    <span class="text-primary font-bold text-sm mb-2 block">2005-2006</span>
+                                    <h3
+                                        class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                        Teknik Servis Elemanı</h3>
+                                    <h4 class="text-lg font-bold text-slate-800 dark:text-gray-300 mb-2">Sistem
+                                        Bilgisayar</h4>
+                                    <p class="text-slate-600 dark:text-gray-500 text-sm mb-4 font-medium"><i
+                                            data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Ankara / Türkiye</p>
+                                    <p class="text-slate-800 dark:text-gray-400 text-sm leading-relaxed font-medium">
+                                        Donanım
+                                        onarımı, yazılım
+                                        kurulumları ve bilgisayar teknik servis hizmetleri.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900 dark:from-white dark:via-gray-400 dark:to-white">
+                        Yetenekler & Uzmanlık</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md hover:bg-slate-50 dark:hover:bg-white/10 transition-all group shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-6">
+                            <i data-lucide="network" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white mb-6 underline decoration-primary decoration-4 underline-offset-8">
+                            Ağ ve İletişim</h3>
+                        <ul class="space-y-3 text-slate-800 dark:text-gray-400 font-medium">
+                            <li>Cisco / HP Aruba</li>
+                            <li>Router Yapılandırma</li>
+                            <li>Wi-Fi / P2P / Wimax</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md hover:bg-slate-50 dark:hover:bg-white/10 transition-all group shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-6">
+                            <i data-lucide="layers" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white mb-6 underline decoration-primary decoration-4 underline-offset-8">
+                            Sistem Yönetimi</h3>
+                        <ul class="space-y-3 text-slate-800 dark:text-gray-400 font-medium">
+                            <li>Microsoft Server</li>
+                            <li>Active Directory</li>
+                            <li>VMware vSphere</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md hover:bg-slate-50 dark:hover:bg-white/10 transition-all group shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white mb-6 underline decoration-primary decoration-4 underline-offset-8">
+                            Güvenlik & CCTV</h3>
+                        <ul class="space-y-3 text-slate-800 dark:text-gray-400 font-medium">
+                            <li>Fortinet / Palo Alto</li>
+                            <li>CCTV / NVR IP Sistem</li>
+                            <li>Siber Güvenlik</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md hover:bg-slate-50 dark:hover:bg-white/10 transition-all group shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-6">
+                            <i data-lucide="code-2" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white mb-6 underline decoration-primary decoration-4 underline-offset-8">
+                            Yazılım & Tasarım</h3>
+                        <ul class="space-y-3 text-slate-800 dark:text-gray-400 font-medium">
+                            <li>SQL Veritabanı</li>
+                            <li>Logo Tiger Erp</li>
+                            <li>Photoshop / Premiere</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div
+                    class="max-w-4xl mx-auto bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md relative overflow-hidden shadow-2xl dark:shadow-none">
+                    <div
+                        class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 dark:bg-primary/15 rounded-full blur-[100px]">
+                    </div>
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6 text-slate-950 dark:text-white">İletişime Geçin</h2>
+                            <p class="text-slate-800 dark:text-gray-400 mb-8 font-medium">Yeni projeler veya iş
+                                teklifleri için bana
+                                ulaşabilirsiniz.
+                            </p>
+                            <div class="space-y-6">
+                                <a href="mailto:engnturker@gmail.com" class="flex items-center group">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4 group-hover:bg-primary transition-colors">
+                                        <i data-lucide="mail" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                                    </div>
+                                    <div><span
+                                            class="block text-slate-600 dark:text-gray-500 text-sm font-bold">E-mail</span><span
+                                            class="text-slate-900 dark:text-white font-bold">engnturker@gmail.com</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.linkedin.com/in/engin-t%C3%BCrker-60747648/" target="_blank"
+                                    class="flex items-center group">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-[#0077b5]/10 flex items-center justify-center mr-4 group-hover:bg-[#0077b5] transition-colors">
+                                        <i data-lucide="linkedin"
+                                            class="w-6 h-6 text-[#0077b5] group-hover:text-white"></i>
+                                    </div>
+                                    <div><span
+                                            class="block text-slate-600 dark:text-gray-500 text-sm font-bold">LinkedIn</span><span
+                                            class="text-slate-900 dark:text-white font-bold">Profilimi Görüntüle</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <form action="https://formspree.io/f/mwvpakzv" method="POST" class="space-y-4">
+                            <input type="text" name="name" required
+                                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-800 dark:text-white outline-none focus:border-primary"
+                                placeholder="Adınız">
+                            <input type="email" name="email" required
+                                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-800 dark:text-white outline-none focus:border-primary"
+                                placeholder="E-posta">
+                            <textarea rows="4" name="message" required
+                                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-800 dark:text-white outline-none focus:border-primary"
+                                placeholder="Mesajınız"></textarea>
+                            <button type="submit"
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold hover:opacity-90 transition-opacity">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark border-t border-white/5 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Engin TÜRKER. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function () {
+            // Toggle theme class
+            document.documentElement.classList.toggle('dark');
+
+            // Update localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+
+            // Re-render icons to swap Sun/Moon
+            lucide.createIcons();
+        });
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+
+</html>

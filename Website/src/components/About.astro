@@ -1,0 +1,89 @@
+---
+const education = [
+  {
+    school: "Anadolu Üniversitesi",
+    faculty: "İşletme Fakültesi",
+    period: "2008-2013"
+  },
+  {
+    school: "Selçuk Üniversitesi",
+    faculty: "Doğalgaz, Isıtma ve Sıhhi Tesisat Teknolojileri",
+    period: "2005-2007"
+  }
+];
+
+const certificates = [
+  "VMware vSphere (Bilge Adam Academy)",
+  "Cisco CCNA (ODTÜ SEM)",
+  "ECDL (Çizgi TAGEM)",
+  "CompTIA Network+ (Çizgi TAGEM)",
+  "A+ Bilgisayar Teknik Servis (Çizgi TAGEM)",
+  "Bilgisayar İşletmenliği (MEB)"
+];
+---
+
+<section id="about" class="py-24 relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16">
+      <div class="flex-1 space-y-8">
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white border-l-4 border-primary pl-4">Hakkımda</h2>
+          <p class="text-gray-400 leading-relaxed text-lg">
+            21/03/1985 Amasya doğumluyum. Kariyer hayatıma teknik servis elemanı olarak başlayıp, 15 yılı aşkın süredir bilgi işlem, sistem yönetimi ve network dizaynı konularında uzmanlaşarak devam etmekteyim. Tekfen İnşaat bünyesinde Azerbaycan, BAE ve Türkiye'deki devasa projelerde BT altyapılarını kurma ve yönetme şansı buldum.
+          </p>
+          <p class="text-gray-400 leading-relaxed text-lg mt-4">
+            Şu anda Albayrak Demir Çelik bünyesinde 180'den fazla bilgisayar ve çoklu sunucu yapılarını yöneterek BT süreçlerinin kesintisiz devam etmesini sağlamaktayım.
+          </p>
+        </div>
+
+        <div class="pt-8">
+            <h3 class="text-xl font-bold mb-6 text-white flex items-center">
+              <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 text-primary"></i> Eğitim
+            </h3>
+            <div class="space-y-6">
+              {education.map(edu => (
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <h4 class="font-bold text-white">{edu.school}</h4>
+                  <p class="text-gray-400 text-sm">{edu.faculty}</p>
+                  <p class="text-primary text-xs mt-1">{edu.period}</p>
+                </div>
+              ))}
+            </div>
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
+          <h3 class="text-xl font-bold mb-8 text-white flex items-center">
+            <i data-lucide="award" class="w-6 h-6 mr-3 text-secondary"></i> Sertifikalar & Eğitimler
+          </h3>
+          <ul class="space-y-4">
+            {certificates.map(cert => (
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="w-5 h-5 mr-3 text-secondary shrink-0 mt-0.5"></i>
+                <span class="text-gray-300">{cert}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <div class="mt-12 grid grid-cols-2 gap-4">
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                <span class="block text-3xl font-bold text-white mb-1">15+</span>
+                <span class="text-gray-500 text-xs uppercase tracking-widest">Yıl Deneyim</span>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                <span class="block text-3xl font-bold text-white mb-1">10+</span>
+                <span class="text-gray-500 text-xs uppercase tracking-widest">Dev Proje</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+</script>

@@ -1,0 +1,95 @@
+---
+const experiences = [
+  {
+    period: "2022-Halen",
+    company: "Albayrak Demir Çelik",
+    role: "Bilgi İşlem Sorumlusu",
+    location: "Samsun/Türkiye",
+    description: "Erna Holding bünyesindeki tüm grup şirketlere BT alanında kurulum ve destek hizmetleri. 14 server ve 180 bilgisayara donanım ve yazılım desteği, Microsoft Server 2012 yönetimi, Fortinet Firewall, Avaya IP Office 500 yönetimi, HP Aruba Switch Yapılandırmaları."
+  },
+  {
+    period: "2019-2022",
+    company: "Tekfen İnşaat ve Tesisat A.Ş",
+    role: "Bilgi İşlem Uzmanı",
+    location: "Bakü/Azerbaycan",
+    description: "Azerbaycan Ülke Ofisi. 7 server ve 80 bilgisayara donanım ve yazılım desteği, Microsoft Server 2018 yönetimi, Fortinet Firewall, Avaya IP Office 500, HP Aruba Switch, IP Kameralar ve Dahua CCTV yazılımları."
+  },
+  {
+    period: "2017-2019",
+    company: "Tekfen İnşaat ve Tesisat A.Ş",
+    role: "Bilgi İşlem Şefi",
+    location: "Kırklareli/Türkiye",
+    description: "Türkakım Alım Terminali Yapım İşleri. 5 server ve 160 bilgisayara destek, Microsoft Server 2012, Fortinet Firewall, Avaya IP Office 500, HP Aruba Switch, IP Kameralar ve Dahua CCTV uygulamaları."
+  },
+  {
+    period: "2015-2017",
+    company: "Tekfen İnşaat ve Tesisat A.Ş",
+    role: "Bilgi İşlem Sorumlusu",
+    location: "Yozgat/Türkiye",
+    description: "TANAP Projesi. 8 server ve 150 bilgisayara destek, Microsoft Server 2012, Palo Alto Firewall, Avaya IP Office 500, HP Switch, IP Kameralar ve Dahua CCTV uygulamaları."
+  },
+  {
+    period: "2013-2015",
+    company: "Tekfen İnşaat ve Tesisat A.Ş",
+    role: "Bilgi İşlem Elemanı",
+    location: "Bakü/Azerbaycan",
+    description: "Bakü Olimpiyat Stadyumu Projesi. 15 server ve 200 bilgisayara destek, Microsoft Server 2008, Palo Alto Firewall, Avaya IP Office 500, Cisco Switch, IP Kameralar ve Novus NMS CCTV uygulamaları."
+  },
+  {
+    period: "2010-2013",
+    company: "Tekfen İnşaat ve Tesisat A.Ş",
+    role: "Bilgi İşlem Sorumlusu",
+    location: "Birleşik Arap Emirlikleri",
+    description: "SAS/ASAB Gaz Ayrıştırma Tesisi. 5 server ve 150 bilgisayara donanım/yazılım desteği, VoIP, Video Konferans, Uydu Bağlantıları, Wimax, ADSL, P2P desteği, Debian Proxy Server ve Güvenlik duvarı uygulamaları."
+  }
+];
+---
+
+<section id="experience" class="py-24 relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+        İş Deneyimi
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Kariyerim boyunca görev aldığım önemli projeler ve sorumluluklarım.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Vertical Line -->
+      <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent"></div>
+
+      <div class="space-y-12">
+        {experiences.map((exp, index) => (
+          <div class={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+            <!-- Dot -->
+            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark z-10"></div>
+            
+            <div class="w-full md:w-1/2 px-8">
+              <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-primary/50 transition-colors group">
+                <span class="text-primary font-bold text-sm mb-2 block">{exp.period}</span>
+                <h3 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">{exp.role}</h3>
+                <h4 class="text-lg font-medium text-gray-300 mb-2">{exp.company}</h4>
+                <p class="text-gray-500 text-sm mb-4 flex items-center">
+                  <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i> {exp.location}
+                </p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+            </div>
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Refresh Lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+</script>
