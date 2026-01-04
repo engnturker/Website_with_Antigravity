@@ -1,0 +1,40 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-dark border-t border-white/5 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4">
+                    Antigravity
+                </h2>
+                <p class="text-gray-400 max-w-sm">
+                    Elevating web development to new heights with premium Astro templates and design systems.
+                </p>
+            </div>
+            
+            <div>
+                <h3 class="text-white font-semibold mb-4">Product</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-white font-semibold mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/5 mt-12 pt-8 text-center text-gray-500 text-sm">
+            &copy; {currentYear} Antigravity. All rights reserved.
+        </div>
+    </div>
+</footer>
