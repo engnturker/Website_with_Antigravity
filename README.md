@@ -46,7 +46,7 @@ Siteniz herhangi bir sunucu tarafı bağımlılığı (PHP, Node.js vb.) gerekti
 
 - **E-posta**: engnturker@gmail.com
 - **LinkedIn**: [Profilimi Görüntüle](https://www.linkedin.com/in/engin-t%C3%BCrker-60747648/)
-- **Konum**: Çerkezköy, Tekirdağ
+- **Konum**: Atakum,SAMSUN
 
 ---
 © 2026 Engin TÜRKER. Tüm hakları saklıdır.
