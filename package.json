@@ -2,6 +2,14 @@
   "name": "antigravity",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/engnturker/Website_with_Antigravity#readme",
+  "bugs": {
+    "url": "https://github.com/engnturker/Website_with_Antigravity/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engnturker/Website_with_Antigravity.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
